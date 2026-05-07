@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>O Freio Invisível do Consumo | Brasil 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #eef2f9;
@@ -101,7 +101,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 0 3.5rem 5.5rem;
+            padding: 5.5rem 3.5rem 5.5rem;
             position: relative;
             overflow: hidden;
         }
@@ -173,15 +173,15 @@
             margin-bottom: 3rem;
         }
         .hero h1 .ln { display: block; overflow: hidden; }
-        .hero h1 .ln s {
+        .hero h1 .ln span {
             display: block;
             transform: translateY(112%);
             text-decoration: none;
             animation: lr 0.95s cubic-bezier(0.16,1,0.3,1) forwards;
         }
-        .hero h1 .ln:nth-child(1) s { animation-delay: 1.55s; }
-        .hero h1 .ln:nth-child(2) s { animation-delay: 1.72s; }
-        .hero h1 .ln:nth-child(3) s { animation-delay: 1.89s; }
+        .hero h1 .ln:nth-child(1) span { animation-delay: 1.55s; }
+        .hero h1 .ln:nth-child(2) span { animation-delay: 1.72s; }
+        .hero h1 .ln:nth-child(3) span { animation-delay: 1.89s; }
         .hero h1 em { font-style: normal; color: #60a5fa; }
         @keyframes lr { 100%{ transform:translateY(0); } }
         .h-bot {
@@ -522,7 +522,7 @@
         @media (max-width: 900px) {
             nav { padding: 1rem 1.5rem; }
             .nav-links { display: none; }
-            .hero { padding: 0 1.5rem 4rem; }
+            .hero { padding: 4.5rem 1.5rem 4rem; }
             .h-kpis, .scroll-hint, .h-ghost { display: none; }
             .sec, .stmt, .cta, .author { padding: 4.5rem 1.5rem; }
             .sh { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -606,11 +606,10 @@
                     }
                 });
             });
-            // marquee duplication for infinite (simple fix)
+            // marquee duplication for infinite seamless loop (FIX: duplicate inner content, not the element)
             const marqueeTrack = document.querySelector('.mt');
             if (marqueeTrack) {
-                const clone = marqueeTrack.cloneNode(true);
-                marqueeTrack.parentElement.appendChild(clone);
+                marqueeTrack.innerHTML += marqueeTrack.innerHTML;
             }
         });
     </script>
@@ -634,7 +633,7 @@
     <div class="h-ghost">80%</div>
     <div class="h-ticker" id="htk">ENDIVIDAMENTO &nbsp; ENDIVIDAMENTO &nbsp; ENDIVIDAMENTO &nbsp;</div>
     <div class="h-eye">Alerta estratégico • Brasil 2026 • Dados Oficiais</div>
-    <h1><span class="ln"><s>O freio</s></span><span class="ln"><s><em>invisível</em></s></span><span class="ln"><s>do consumo</s></span></h1>
+    <h1><span class="ln"><span>O freio</span></span><span class="ln"><span><em>invisível</em></span></span><span class="ln"><span>do consumo</span></span></h1>
     <div class="h-bot">
         <p class="h-desc">Mesmo com inflação controlada e mercado aquecido, o consumo trava. Os indicadores de endividamento bateram recorde histórico no 1º trimestre de 2026.</p>
         <div class="h-kpis">
@@ -721,7 +720,7 @@
 </section>
 <div class="author">
     <div class="author-in rv">
-        <div class="author-avatar"><a href="https://media.licdn.com/dms/image/v2/D4D03AQEVSlTe_EVuJQ/profile-displayphoto-scale_400_400/B4DZpK48H2JMAg-/0/1762193033631?e=1779926400&v=beta&t=JdjGVH3Mawmef5QObZdInn0zViRMbw5SI-DxbZYi-yc"></a></div>
+        <div class="author-avatar">FR</div>
         <div class="author-body">
             <div class="author-name">Fagner Rocha</div>
             <div class="author-role">Analista Estratégico · Gestão &amp; Mercado</div>
